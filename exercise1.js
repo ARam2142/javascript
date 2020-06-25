@@ -1,20 +1,38 @@
 //Complete the following problems: 
 
 // Problem 1:
-// Part 1: Write a JavaScript function that converts the current temperature from Fahrenheit to Celsius. Declare a variable for the current temperature then store the Celsius temperature into a variable. Console log the variable.
+/* Part 1: Write a JavaScript function that converts the current temperature from Fahrenheit to Celsius. 
+Declare a variable for the current temperature then store the Celsius temperature into a variable. Console log the variable.*/
 
 // Part 2: Write another funciton that converts the Celsius temperature back to Fahrenheit. 
 
 //your code...
 
 
-
-
+//converts temperature from celcius to fahrenheit
+function convertToF(fahrenheit) {
+    var fTemp = fahrenheit;
+    var conToCels = Math.round((fTemp - 32) * 5/9);
+    console.log(conToCels);
+ 
+ }
+ 
+ //converts temperature from fahrenheit to celsius
+ function convertToC(celsius) {
+     //variable cTemp holds celsius
+     var cTemp = celsius;
+     var conToFahr = Math.round(cTemp * 5/9 +32);
+     console.log(conToFahr);
+ }
+ 
+ convertToF(70);
+ convertToC(27);
 
 
 /************************************************************* */
 // Problem 2:
-// Write a JavaScript function to determine if someone is old enough to vote. Declare a variable for age and write a conditional statement for whether that age is old enough to vote. Console log "yes" or "no"
+/* Write a JavaScript function to determine if someone is old enough to vote. 
+Declare a variable for age and write a conditional statement for whether that age is old enough to vote. Console log "yes" or "no"*/
 
 //your code...
 
