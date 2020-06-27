@@ -36,7 +36,53 @@ Declare a variable for age and write a conditional statement for whether that ag
 
 //your code...
 
+//must be at least 18 years old to vote
 
+//Input: "01/01/1985"
+//Output: boolean true/false whether this person is 18 years at least or older
+
+// 17 == '17' => true
+//17 === '17' => false
+'01/01/2018'
+function isOldEnoughToVote(dob) {
+    //COnvert dob string to date object
+    var birthDate = new Date(dob);
+    var today = new Date();
+
+    //if year is 16 years ago or less return false
+    var birthYear = birthDate.getFullYear();
+    var currentYear = today.getFullYear();
+    if(currentYear - birthYear < 17) {
+        return false;
+    }
+    //if it is more than 18 reutrn true
+    if(currentYear - birthYear > 17) {
+        return true;
+    }//Because of return statements if we make it here in code we know the number MUST be 17
+    //If year is exctly 17 --special case
+    //compare to see if the current month is greaterthan birth month if so then van vote, if not if above then cant vote if same
+    var birthMonth = birthDate.getMonth();
+    var currentMonth = today.getMonth();
+    if(birthMonth < currentMonth) {
+        return true;
+    }
+    if(birthMonth > currentMonth) {
+        return false;
+    }
+
+    //If we have made it here in our code we know dob in this year and this month, compare days
+    var birthDay= birthDate.getDate();
+    var currentDay = today.getDate();
+    if(birthDay > currentDay) {
+        return false;
+    }
+   return true;
+}
+ function betterIs18(dob) {
+    var birthdate = moment(dob);
+    var wouldBe18On = moment().subtract(18, 'years');
+    return birthdate.isBefore(wouldBe18On);
+ }
 
 
 
